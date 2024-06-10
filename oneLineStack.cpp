@@ -21,6 +21,22 @@ public:
     {
         top = new node<T>(_data, top);
     };
+    int size()
+    {
+        if (isEmpty())
+            return 0;
+
+        node<T> *ref = top;
+        int i = 0;
+
+        while (ref != nullptr)
+        {
+            i++;
+            ref = ref->next;
+        }
+
+        return i;
+    }
     T pop()
     {
         if (isEmpty())

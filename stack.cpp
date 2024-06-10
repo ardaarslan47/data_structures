@@ -17,6 +17,23 @@ private:
 public:
     stack() : last(nullptr) {}
 
+    int size()
+    {
+        if (isEmpty())
+            return 0;
+
+        node<T> *ref = last;
+        int i = 0;
+
+        while (ref != nullptr)
+        {
+            i++;
+            ref = ref->prev;
+        }
+        
+        return i;
+    }
+
     void push(T _data)
     {
         node<T>* newNode = new node<T>;
