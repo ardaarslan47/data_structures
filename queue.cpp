@@ -69,4 +69,20 @@ public:
     {
         return first == nullptr;
     };
+    int size()
+    {
+        if (isEmpty())
+            return 0;
+
+        int i = 0;
+        node<T> *ref = first;
+
+        while (ref != nullptr)
+        {
+            i++;
+            ref = ref->next;
+        }
+
+        return i;
+    }
 };
